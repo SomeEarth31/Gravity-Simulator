@@ -1,8 +1,8 @@
-#include <iostream>Getgrav_force
+#include <iostream>
 #include <cmath>
 #include <fstream>
 #include <sstream>
-#include <string> 
+#include <string>
 
 using std::string;
 
@@ -16,9 +16,9 @@ private:
 public:
     Vector(double x, double y, double z)
     {
-        _x (x);
-        _y (y);
-        _z (z);
+        _x=(x);
+        _y=(y);
+        _z=(z);
     }
     void x(double x) 
     {
@@ -106,10 +106,10 @@ public:
     Particle(double mass, double x, double y, double z, double vx,
              double vy, double vz, double charge)
     {
-        _mass (mass);
+        _mass = mass;
         Position.x(x), Position.y(y), Position.z(z);
         Velocity.x(vx), Velocity.y(vy), Velocity.z(vz);
-        _charge (charge);
+        _charge = charge;
     }
     friend std::ostream &operator<<(std::ostream &os, const Particle &obj)
     { 
@@ -309,6 +309,9 @@ Particle Electro_Sim::run(Particle a, Vector F_net, double t)
 
 int main(void)
 {
+    time_t start, end;
+    time(&start);
+    std::ios_base::sync_with_stdio(false);
     int N = 0;
     // Vector a = Vector(1, 2, 3);
     // Vector b = Vector(2, 3, 4);
@@ -345,6 +348,7 @@ int main(void)
     Particle *Par = (Particle *)malloc(sizeof(Particle) * (N - 1));
     // number of particles
     std::getline(myFile, line);
+     //std::cout << N << std::endl;
     int i = 0;
     while (std::getline(myFile, line))
     {
@@ -352,24 +356,34 @@ int main(void)
         string temp;
         std::stringstream ss(line);
         std::getline(ss, temp, ',');
-        mass = stod(temp);
+        mass = std::stod(temp);
+        //std::cout << N << std::endl;
         std::getline(ss, temp, ',');
-        x = stod(temp);
+        x = std::stod(temp);
+        //std::cout << N << std::endl;
         std::getline(ss, temp, ',');
-        y = stod(temp);
+        y = std::stod(temp);
+        //std::cout << N << std::endl;
         std::getline(ss, temp, ',');
-        z = stod(temp);
+        z = std::stod(temp);
+        //std::cout << N << std::endl;
         std::getline(ss, temp, ',');
-        vx = stod(temp);
+        vx = std::stod(temp);
+        //std::cout << N << std::endl;
         std::getline(ss, temp, ',');
-        vy = stod(temp);
+        vy = std::stod(temp);
+        //std::cout << N << std::endl;
         std::getline(ss, temp, ',');
-        vz = stod(temp);
+        vz = std::stod(temp);
+        //std::cout << N << std::endl;
         std::getline(ss, temp, ',');
-        charge = stod(temp);
+        charge = std::stod(temp);
+        //std::cout << N << std::endl;
         Par[i] = Particle(mass, x, y, z, vx, vy, vz, charge);
+       // std::cout << N << std::endl;
         i++;
     }
+    //std::cout << N << std::endl;
     // std::cout << Par[0].P() << " | " << Par[0].V() << std::endl;
     // std::cout << Par[1].P() << " | " << Par[1].V() << std::endl;
     //std::cout << i << std::endl;
@@ -402,7 +416,8 @@ int main(void)
     char *GnuCommands[] = { "set title \"N-Body System\"", "plot 'data.tmp'"};
     fp = fopen("data.tmp", "w");
     gnupipe = popen("gnuplot -persitent", "w");
-
+//  std::cout << N << std::endl;
+//  std::cout << N << std::endl;
 
     //std::cout << Par[1].P() << " | " << Par[1].V() << std::endl;
     if( thing == 103){
@@ -417,7 +432,7 @@ int main(void)
     char filename[] = "0planet.txt";
 
     for (int i = 0; i < N - 1; i++){
-        fprintf(fp, "%lf %lf %d\n", Par[i].P().x(), Par[i].P().y(), i);
+        fprintf(fp, "%lf %lf %lf %d\n", Par[i].P().x(), Par[i].P().y(), Par[i].P().z(), i);
     }
 
     //fprintf(fp, "%lf %lf\n", 2e+12, 0);
@@ -425,13 +440,15 @@ int main(void)
     // std::cout << Par[0].P() << " | " << Par[0].V() << std::endl;
     // std::cout << Par[1].P() << " | " << Par[1].V() << std::endl;
    // std::cout << "--------------------" << std::endl;
+
     Vector *forceM = (Vector *)malloc(sizeof(Vector) * (pow(N - 1, 2)));
     for (int j = 0; j < (N - 1) * (N - 1); j++)
             {
                 forceM[j] = Vector(0, 0, 0);
             }
     int time = 0;
-    while(time<T*864){
+    while(time<T*86){ 
+        //T*86400
       //std::cout << "--------------------" << std::endl;
          for (int j = 0; j < (N - 1) * (N - 1); j++)
             {
@@ -489,8 +506,8 @@ int main(void)
 
 
         for (int i = 0; i < N - 1; i++){
-            ph = grav_force.run(Par[i], force_net[i], 100);
-            
+            ph = grav_force.run(Par[i], force_net[i], 1004);
+                                                   // ^100^
             // std::cout << "( " << force_net[i].x() << ", " << force_net[i].y()
             //               << ", " << force_net[i].z() << ")" << std::endl;
             Par[i].input(ph.M(), ph.P().x(), ph.P().y(), ph.P().z(),
@@ -505,7 +522,7 @@ int main(void)
             outFile << Par[i].V().z() <<"\n "<<std::endl;
             outFile.close();
 
-            fprintf(fp, "%lf %lf  %d\n", Par[i].P().x(), Par[i].P().y(), i);
+            fprintf(fp, "%lf %lf %lf %d\n", Par[i].P().x(), Par[i].P().y(), Par[i].P().z(), i);
         }
 
         //std::cout << time << std::endl;
@@ -525,7 +542,7 @@ int main(void)
     char filename[] = "0electro.txt";
 
     for (int i = 0; i < N - 1; i++){
-        fprintf(fp, "%lf %lf %d\n", Par[i].P().x(), Par[i].P().y(), i);
+        fprintf(fp, "%lf %lf %lf %d\n", Par[i].P().x(), Par[i].P().y(), Par[i].P().z(), i);
     }
 
     //fprintf(fp, "%lf %lf\n", 2e+12, 0);
@@ -610,29 +627,35 @@ int main(void)
             outFile << time << " | ";
             outFile << Par[i].M() << ", " << Par[i].P().x() << ", " << Par[i].P().y() << ", ";
             outFile << Par[i].P().z() << ", " << Par[i].V().x() << ", " << Par[i].V().y() << ", ";
-            outFile << Par[i].V().z() <<"\n "<<std::endl;
+            outFile << Par[i].V().z() << "\n " << std::endl;
             outFile.close();
 
-            fprintf(fp, "%lf %lf %d \n", Par[i].P().x(), Par[i].P().y(), i);
-        }
+            fprintf(fp, "%lf %lf %lf %d\n", Par[i].P().x(), Par[i].P().y(), Par[i].P().z(), i);
 
-        //std::cout << time << std::endl;
-        time++;
+            // std::cout << time << std::endl;
+            time++;
     }
     }
 
     //std::cout << Par[0].P() << " | " << Par[0].V() << std::endl;`
    // std::cout << Par[1].P() << " | " << Par[1].V() << std::endl;
 
-    for (int i = 0; i < 2; i++){
-        fprintf(gnupipe, "%s\n", GnuCommands[i]);
-    }
+    // for (int i = 0; i < 2; i++){
+    //     fprintf(gnupipe, "%s\n", GnuCommands[i]);
+    // }
 
     // fprintf(gnupipe, "set xlabel 'X'\n");
     // fprintf(gnupipe, "set ylabel 'Y'\n");
     // fflush(gnupipe);
     // getchar();
+    }
 
     std::cout << "DONE" << std::endl;
+    time(&end);
+    double time_taken = double(end - start);
+
+    std::cout << "Time taken by simulation : " << std::fixed
+              << time_taken << " sec " << std::endl;
+    // std::cout << " sec " << std::endl;
     return 0;
 }
