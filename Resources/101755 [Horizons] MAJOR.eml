@@ -1,0 +1,179 @@
+Return-Path: <horizons@ssd.jpl.nasa.gov>
+X-Original-To: samarthk21@iitk.ac.in
+Delivered-To: samarthk21@iitk.ac.in
+Received: from mail2.iitk.ac.in (mail2.iitk.ac.in [172.31.1.214])
+	by newmailhost.cc.iitk.ac.in (Postfix) with ESMTPS id 89C551A000207
+	for <samarthk21@iitk.ac.in>; Sun, 30 Oct 2022 17:17:14 +0530 (IST)
+Received: from mailo.iitk.ac.in (mailo.iitk.ac.in [172.31.1.123])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mail2.iitk.ac.in (Postfix) with ESMTPS id 6DE531800078
+	for <samarthk21@iitk.ac.in>; Sun, 30 Oct 2022 17:17:14 +0530 (IST)
+X-ASG-Debug-ID: 1667130429-16fa831696cb47f0001-F8Q8oN
+Received: from mx0e-0020b901.pphosted.com (mx0e-0020b901.pphosted.com [67.231.147.103]) by mailo.iitk.ac.in with ESMTP id PJKHfmNlggegJcpn (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO) for <samarthk21@iitk.ac.in>; Sun, 30 Oct 2022 17:17:12 +0530 (IST)
+X-Barracuda-Envelope-From: horizons@ssd.jpl.nasa.gov
+X-Barracuda-Effective-Source-IP: mx0e-0020b901.pphosted.com[67.231.147.103]
+X-Barracuda-Apparent-Source-IP: 67.231.147.103
+Received: from pps.filterd (m0196083.ppops.net [127.0.0.1])
+	by mx0e-0020b901.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 29UBd6Fn014921
+	for <samarthk21@iitk.ac.in>; Sun, 30 Oct 2022 11:47:08 GMT
+Received: from mail.jpl.nasa.gov (smtp.jpl.nasa.gov [128.149.137.103])
+	by mx0e-0020b901.pphosted.com with ESMTP id 3kheb5s0sk-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <samarthk21@iitk.ac.in>; Sun, 30 Oct 2022 11:47:08 +0000
+Received: from ssd.jpl.nasa.gov (ssd.jpl.nasa.gov [137.78.251.144])
+	by smtp.jpl.nasa.gov (Sentrion-MTA-4.5.6/Sentrion-MTA-4.5.6) with ESMTP id 29UBl7x8123342
+	for <samarthk21@iitk.ac.in>; Sun, 30 Oct 2022 11:47:07 GMT
+Received: by ssd.jpl.nasa.gov (Postfix, from userid 800)
+	id 88240C0050; Sun, 30 Oct 2022 04:47:07 -0700 (PDT)
+Subject: [Horizons] MAJOR BODY #C(500@10)_T(799) (1/1)
+X-Loop: horizons@ssd.jpl.nasa.gov
+X-ASG-Orig-Subj: [Horizons] MAJOR BODY #C(500@10)_T(799) (1/1)
+Message-Id: <20221030114707.88240C0050@ssd.jpl.nasa.gov>
+Date: Sun, 30 Oct 2022 04:47:07 -0700 (PDT)
+From: horizons@ssd.jpl.nasa.gov (Horizons Ephemeris System)
+X-Source-IP: ssd.jpl.nasa.gov [137.78.251.144]
+X-Source-Sender: horizons@ssd.jpl.nasa.gov
+X-AUTH: Authorized
+X-Proofpoint-GUID: VhvDqk-NyTKoe6jSET2GTXqgDvajk8qS
+X-Proofpoint-ORIG-GUID: VhvDqk-NyTKoe6jSET2GTXqgDvajk8qS
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.545,18.0.895
+ definitions=2022-10-30_05:2022-10-26,2022-10-30 signatures=0
+X-Proofpoint-Spam-Reason: safe
+X-Barracuda-Connect: mx0e-0020b901.pphosted.com[67.231.147.103]
+X-Barracuda-Start-Time: 1667130431
+X-Barracuda-Encrypted: ECDHE-RSA-AES256-GCM-SHA384
+X-Barracuda-URL: https://mailo.iitk.ac.in:443/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at iitk.ac.in
+X-Barracuda-Scan-Msg-Size: 6164
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 1.22
+X-Barracuda-Spam-Status: No, SCORE=1.22 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=6.0 tests=BSF_SC0_MISMATCH_TO, EMPTY_TO_HEADER, MISSING_HEADERS, MISSING_HEADERS_2, TO_CC_NONE
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.101783
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.01 EMPTY_TO_HEADER        Custom rule EMPTY_TO_HEADER
+	0.00 MISSING_HEADERS        Missing To: header
+	1.21 MISSING_HEADERS_2      Missing To: header
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+	0.00 TO_CC_NONE             No To: or Cc: header
+
+ Automated mail xmit by MAIL_REQUEST, PID= 8360 Sun Oct 30 04:47:07 2022
+++++++++++++++++++++++++++++++++ (part 1 of 1)  +++++++++++++++++++++++++++++++
+*******************************************************************************
+ Revised: September 30, 2021           Uranus                               799
+ 
+ PHYSICAL DATA:
+  Mass x10^24 (kg)      = 86.813          Density (g/cm^3)       =  1.271
+  Equat. radius (1 bar) = 25559+-4 km     Polar radius (km)      = 24973+-20
+  Vol. Mean Radius (km) = 25362+-12       Flattening             =  0.02293
+  Geometric Albedo      = 0.51
+  Sid. rot. period (III)= 17.24+-0.01 h   Sid. rot. rate (rad/s) = -0.000101237
+  Mean solar day, h     =~17.24           Rocky core mass (Mc/M) =  0.0012        
+  GM (km^3/s^2)         = 5793951.256     GM 1-sigma (km^3/s^2)  = +-4.3 
+  Equ. grav, ge (m/s^2) =  8.87           Pol. grav, gp (m/s^2)  =   9.19+-0.02
+  Visual magnitude V(1,0)= -7.11
+  Vis. mag. (opposition)=  +5.52          Obliquity to orbit     = 97.77 deg
+  Sidereal orbit period = 84.0120465 y    Sidereal orbit period  = 30685.4 d
+  Mean daily motion     = 0.01176904 dg/d Mean orbit velocity    =  6.8 km/s
+  Atmos. temp. (1 bar)  =  76+-2 K        Escape speed, km/s     =  21.3           
+  Aroche(ice)/Rp        =  2.20           Hill's sphere rad., Rp = 2700
+                                 Perihelion   Aphelion    Mean
+  Solar Constant (W/m^2)         4.09         3.39        3.71
+  Maximum Planetary IR (W/m^2)   0.72         0.55        0.63
+  Minimum Planetary IR (W/m^2)   0.72         0.55        0.63
+*******************************************************************************
+ 
+ 
+*******************************************************************************
+Ephemeris / MAIL_REQUEST Sun Oct 30 04:47:07 2022 Pasadena, USA  / Horizons
+*******************************************************************************
+Target body name: Uranus (799)                    {source: ura116}
+Center body name: Sun (10)                        {source: ura116}
+Center-site name: BODY CENTER
+*******************************************************************************
+Start time      : A.D. 2022-Jan-01 00:00:00.0000 TDB
+Stop  time      : A.D. 2022-Jan-01 00:00:01.0000 TDB
+Step-size       : 60 minutes
+*******************************************************************************
+Center geodetic : 0.00000000,0.00000000,0.0000000 {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.00000000,0.00000000,0.0000000 {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : 696000.0 x 696000.0 x 696000.0 k{Equator, meridian, pole}    
+Output units    : KM-S
+Output type     : GEOMETRIC cartesian states
+Output format   : 3 (position, velocity, LT, range, range-rate)
+Reference frame : Ecliptic of J2000.0
+*******************************************************************************
+JDTDB
+   X     Y     Z
+   VX    VY    VZ
+   LT    RG    RR
+*******************************************************************************
+$$SOE
+2459580.500000000 = A.D. 2022-Jan-01 00:00:00.0000 TDB 
+ X = 2.153854112343678E+09 Y = 2.016387535055794E+09 Z =-2.042200590418029E+07
+ VX=-4.700044196112450E+00 VY= 4.666764237469827E+00 VZ= 7.796589842800516E-02
+ LT= 9.841736860621450E+03 RG= 2.950478484434908E+09 RR=-2.422646043088992E-01
+$$EOE
+*******************************************************************************
+ 
+TIME
+
+  Barycentric Dynamical Time ("TDB" or T_eph) output was requested. This
+continuous relativistic coordinate time is equivalent to the relativistic
+proper time of a clock at rest in a reference frame comoving with the
+solar system barycenter but outside the system's gravity well. It is the
+independent variable in the solar system relativistic equations of motion.
+
+  TDB runs at a uniform rate of one SI second per second and is independent
+of irregularities in Earth's rotation.
+
+  Calendar dates prior to 1582-Oct-15 are in the Julian calendar system.
+Later calendar dates are in the Gregorian system.
+
+REFERENCE FRAME AND COORDINATES
+
+  Ecliptic at the standard reference epoch
+
+    Reference epoch: J2000.0
+    X-Y plane: adopted Earth orbital plane at the reference epoch
+               Note: IAU76 obliquity of 84381.448 arcseconds wrt ICRF X-Y plane
+    X-axis   : ICRF
+    Z-axis   : perpendicular to the X-Y plane in the directional (+ or -) sense
+               of Earth's north pole at the reference epoch.
+
+  Symbol meaning:
+
+    JDTDB    Julian Day Number, Barycentric Dynamical Time
+      X      X-component of position vector (km)
+      Y      Y-component of position vector (km)
+      Z      Z-component of position vector (km)
+      VX     X-component of velocity vector (km/sec)                           
+      VY     Y-component of velocity vector (km/sec)                           
+      VZ     Z-component of velocity vector (km/sec)                           
+      LT     One-way down-leg Newtonian light-time (sec)
+      RG     Range; distance from coordinate center (km)
+      RR     Range-rate; radial velocity wrt coord. center (km/sec)
+
+ABERRATIONS AND CORRECTIONS
+
+ Geometric state vectors have NO corrections or aberrations applied.
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/hrzn_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Author      : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************
